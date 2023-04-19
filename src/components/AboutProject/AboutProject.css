@@ -1,0 +1,64 @@
+.aboutProject {
+  padding: 110px 70px;
+  /*display: flex;
+  flex-direction: column;
+  justify-content: center;*/
+}
+
+.aboutProject__textbox {
+  display: flex;
+  margin: 70px 0 110px;
+}
+
+.aboutProject__columns {
+  margin: 0 20px 0 0;
+}
+
+.aboutProject__description {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.04em;
+  margin: 0 0 26px;
+}
+
+.aboutProject__text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0;
+}
+
+.aboutProject__graphbox {
+  display: flex;
+  width: 100%;
+}
+
+.aboutProject__backend {
+  width: 20%;
+  text-align: center;
+}
+
+.aboutProject__backend-week {
+  background-color: #3DDC84;
+  color: #000000;
+  padding: 9px 0;
+}
+
+.aboutProject__backend-description {
+  margin: 14px 0 0;
+}
+
+.aboutProject__frontend {
+  width: 80%;
+  text-align: center;
+}
+
+.aboutProject__frontend-week {
+  background-color: #303030;
+  padding: 9px 0;
+}
+
+.aboutProject__frontend-description {
+  margin: 14px 0 0;
+}

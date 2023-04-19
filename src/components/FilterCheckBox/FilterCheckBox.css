@@ -1,0 +1,65 @@
+.filter {
+  position: relative;
+  display: flex;
+  gap: 14px;
+  width: 36px;
+  height: 20px;
+  z-index: 3;
+  margin: 0 14px 0 0;
+}
+
+.filter__checkBox {
+  display: none;
+}
+
+.filter__label {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 3;
+}
+
+.filter__slider {
+  position: absolute;
+  z-index: 2;
+  top: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  transition: left 0.5s ease-in;
+  background-color: #2BE080;
+  border: 1px #FFFFFF solid;
+  box-sizing: border-box;
+
+}
+
+.filter__background {
+  background-color: #343434;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  border-radius: 20px;
+}
+
+
+.filter .filter__checkBox:checked~.filter__background {
+  background-color: #343434;
+}
+
+.filter .filter__checkBox:checked~.filter__slider {
+  left: 18px;
+  background-color: #2BE080;
+
+}
+
+.filter .filter__checkBox:not(:checked)~.filter__background {
+  background-color: #343434;
+}
+
+.filter .filter__checkBox:not(:checked)~.filter__slider {
+  left: 2px;
+  background-color: #2BE080;
+}

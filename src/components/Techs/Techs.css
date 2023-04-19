@@ -1,0 +1,42 @@
+.techs {
+  padding: 100px 70px;
+  background-color: #272727;
+}
+
+.techs__title {
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 58px;
+  text-align: center;
+  letter-spacing: -0.04em;
+  margin: 90px 0 26px;
+}
+
+.techs__subtitle {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: -0.04em;
+  margin: 0 auto 100px;
+  max-width: 460px;
+}
+
+.techs__box {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.techs__stack {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  letter-spacing: -0.04em;
+  background-color: #303030;
+  border-radius: 10px;
+  padding: 21px 0;
+  width: 90px;
+  margin: 0;
+}

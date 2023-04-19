@@ -1,0 +1,48 @@
+.header {
+  height: 74px;
+  padding: 0 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__link {}
+
+.header__logo {
+  max-width: 38px;
+}
+
+.header__nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.header__singin {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #000000;
+  padding: 8px 0;
+  text-decoration: none;
+  background-color: #3DDC84;
+  border-radius: 3px;
+  text-align: center;
+  width: 76px;
+}
+
+.header__singup {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.header__movies {}
+
+.header__linkMovie {}
+
+.header__linkAccount {}
+
+.header__accountLogo {}

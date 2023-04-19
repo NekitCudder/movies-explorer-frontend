@@ -1,0 +1,19 @@
+import "./SavedMovies.css";
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+import SearchForm from '../SearchForm/SearchForm';
+import MoviesCardList from '../MoviesCardList/MoviesCardList';
+
+function SavedMovies(loggedIn) {
+  return (
+    <>
+      <Header loggedIn={loggedIn} />
+      <main>
+        <SearchForm />
+        <MoviesCardList />
+      </main>
+      <Footer />
+    </>
+  );
+}
+export default SavedMovies;
