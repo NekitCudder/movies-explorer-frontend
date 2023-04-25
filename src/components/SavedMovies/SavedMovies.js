@@ -4,10 +4,10 @@ import Footer from '../Footer/Footer';
 import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 
-function SavedMovies(loggedIn) {
+function SavedMovies() {
   return (
     <>
-      <Header loggedIn={loggedIn} />
+      <Header loggedIn={true} />
       <main>
         <SearchForm />
         <MoviesCardList />

@@ -33,7 +33,7 @@ function Register() {
           buttonText={"Зарегистрироваться"}
           linkDescription={"Уже зарегистрированы?"}
           linkText={"Войти"}
-          linkRoute={"/signup"}
+          linkRoute={"/signin"}
         />
       </FormSign>
     </section>

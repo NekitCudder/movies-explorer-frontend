@@ -25,8 +25,8 @@ function Register() {
         <ButtonSign
           buttonText={"Войти"}
           linkDescription={"Еще не зарегистрированы?"}
-          linkText={"Войти"}
-          linkRoute={"/signip"}
+          linkText={"Регистрация"}
+          linkRoute={"/signup"}
         />
       </FormSign>
     </section>
