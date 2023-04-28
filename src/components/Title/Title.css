@@ -7,3 +7,10 @@
   border-bottom: solid 1px #DADADA;
   padding: 0 0 23px;
 }
+
+@media screen and (max-width: 590px) {
+  .title {
+    font-size: 18px;
+    padding: 0 0 28px;
+  }
+}

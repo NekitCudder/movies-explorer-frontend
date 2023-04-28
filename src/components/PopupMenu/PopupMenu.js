@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './PopupMenu.css'
-import open from "../../images/open1.svg";
-import close from "../../images/close1.svg";
+import openLogo from "../../images/open.svg";
+import closeLogo from "../../images/close.svg";
 import account from "../../images/account.svg";
 
 function PopupMenu({ loggedIn }) {
@@ -19,11 +19,11 @@ function PopupMenu({ loggedIn }) {
   return (
     <section className="popupMenu">
       <button className={`popupMenu__openButton ${loggedIn && "popupMenu__openButton_active"}`} onClick={handleOpenMenu}>
-        <img className="popupMenu__openButtonImage" srs={open} alt="кнопка открытия" />
+        <img className="popupMenu__openButtonImage" src={openLogo} alt="кнопка открытия" />
       </button>
       <div className={`popupMenu__box ${isOpenMenu && "popupMenu__box_active"}`}>
         <button className="popupMenu__closeButton" onClick={handleCloseMenu}>
-          <img className="popupMenu__closeButtonImage" srs={close} alt="крестик" />
+          <img className="popupMenu__closeButtonImage" src={closeLogo} alt="крестик" />
         </button>
         <div className="popupMenu__nav">
           <Link exact to="/" className="popupMenu__link" activeClass="popupMenu__link_active">Главная</Link>

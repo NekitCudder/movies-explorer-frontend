@@ -4,8 +4,8 @@
   gap: 14px;
   width: 36px;
   height: 20px;
-  z-index: 3;
-  margin: 0 14px 0 0;
+  z-index: 2;
+  margin: 0 15px 0 0;
 }
 
 .filter__checkBox {
@@ -62,4 +62,10 @@
 .filter .filter__checkBox:not(:checked)~.filter__slider {
   left: 2px;
   background-color: #2BE080;
+}
+
+@media screen and (max-width:590px) {
+  .filter {
+    margin: 0 13px 0 0;
+  }
 }

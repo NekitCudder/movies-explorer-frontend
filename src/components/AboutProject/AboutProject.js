@@ -3,7 +3,7 @@ import Title from "../Title/Title";
 
 function AboutProject() {
   return (
-    <section className="aboutProject">
+    <section className="aboutProject" id="abooutProject">
       <Title title="О проекте" />
       <div className="aboutProject__textbox">
         <div className="aboutProject__columns">

@@ -15,7 +15,8 @@
 .profile__form {
   display: flex;
   flex-direction: column;
-  width: 410px;
+  max-width: 410px;
+  width: 100%;
 }
 
 .profile__inputs {
@@ -66,4 +67,39 @@
   border: unset;
   color: #EE3465;
   padding: 0;
+}
+
+@media screen and (max-width:768px) {
+  .profile {
+    padding: 236px 0 269px;
+  }
+
+  .profile__name {
+    margin: 0 0 96px;
+  }
+
+  .profile__edit {
+    margin: 210px 0 16px;
+  }
+}
+
+@media screen and (max-width:460px) {
+  .profile {
+    padding: 70px 30px 40px;
+  }
+
+  .profile__name {
+    margin: 0 0 80px;
+  }
+
+  .profile__edit {
+    margin: 379px 0 16px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .profile__exit {
+    font-size: 12px;
+    line-height: 15px;
+  }
 }

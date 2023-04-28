@@ -27,7 +27,7 @@
 
 .footer__links {
   display: flex;
-  gap:20px;
+  gap: 20px;
 }
 
 .footer__link {
@@ -36,4 +36,39 @@
   line-height: 16px;
   color: #FFFFFF;
   text-decoration: none;
+}
+
+@media screen and (max-width:768px) {
+  .footer {
+    padding: 80px 30px 20px;
+  }
+}
+
+@media screen and (max-width:590px) {
+  .footer {
+    padding: 80px 10px 20px;
+  }
+
+  .footer__description {
+    font-size: 12px;
+    line-height: 15px;
+    margin: 0 0 30px;
+  }
+
+  .footer__box {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .footer__links {
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0 30px;
+    gap: 12px;
+  }
+
+  .footer__copyright {
+    color: #8B8B8B;
+    line-height: 15px;
+  }
 }

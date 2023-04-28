@@ -1,8 +1,5 @@
 .aboutProject {
   padding: 110px 70px;
-  /*display: flex;
-  flex-direction: column;
-  justify-content: center;*/
 }
 
 .aboutProject__textbox {
@@ -12,6 +9,10 @@
 
 .aboutProject__columns {
   margin: 0 20px 0 0;
+}
+
+.aboutProject__columns:last-child {
+  margin: 0;
 }
 
 .aboutProject__description {
@@ -43,10 +44,17 @@
   background-color: #3DDC84;
   color: #000000;
   padding: 9px 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
 }
 
 .aboutProject__backend-description {
   margin: 14px 0 0;
+  color: #A0A0A0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
 }
 
 .aboutProject__frontend {
@@ -57,8 +65,90 @@
 .aboutProject__frontend-week {
   background-color: #303030;
   padding: 9px 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
 }
 
 .aboutProject__frontend-description {
   margin: 14px 0 0;
+  color: #A0A0A0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+@media screen and (max-width: 768px) {
+  .aboutProject {
+    padding: 90px 50px;
+  }
+
+  .aboutProject__textbox {
+    margin: 70px 0 93px;
+  }
+
+  .aboutProject__description {
+    margin: 0 0 22px;
+  }
+
+  .aboutProject__text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .aboutProject__columns {
+    margin: 0 30px 0 0;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .aboutProject {
+    padding: 70px 18px;
+  }
+
+  .aboutProject__textbox {
+    flex-direction: column;
+    margin: 60px 0;
+  }
+
+  .aboutProject__description {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .aboutProject__text {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .aboutProject__columns {
+    margin: 0 0 56px;
+  }
+
+  .aboutProject__backend-week {
+    font-size: 11px;
+    line-height: 13px;
+  }
+
+  .aboutProject__frontend-week {
+    font-size: 11px;
+    line-height: 13px;
+  }
+
+  .aboutProject__backend-description {
+    font-size: 11px;
+    line-height: 13px;
+    margin: 10px 0 0;
+  }
+
+  .aboutProject__frontend-description {
+    font-size: 11px;
+    line-height: 13px;
+    margin: 10px 0 0;
+  }
+
+  .aboutProject__backend {
+    width: 35%;
+  }
 }

@@ -34,8 +34,8 @@ function Header({ loggedIn }) {
             <img className="header__logo" src={logo} alt='Логотип' />
           </Link>
           <div className="header__nav_sign">
-            <Link to='signup' className='header__singup'>Регистрация</Link>
-            <Link to='signin' className='header__singin'>Войти</Link>
+            <Link to='signup' className='header__signup'>Регистрация</Link>
+            <Link to='signin' className='header__signin'>Войти</Link>
           </div>
         </>
       }

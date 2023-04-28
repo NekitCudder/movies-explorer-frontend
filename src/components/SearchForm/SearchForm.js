@@ -18,7 +18,7 @@ function SearchForm() {
           <label className="searchForm__label" for="switch">Короткометражки</label>
         </div>
       </form>
-      <hr className="searchForm__line"></hr>
+      <div className="searchForm__line"></div>
     </section>
   );
 }

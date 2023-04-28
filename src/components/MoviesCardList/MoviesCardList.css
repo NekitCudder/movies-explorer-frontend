@@ -1,5 +1,5 @@
 .moviesCardList {
-  padding: 70px;
+  padding: 70px 70px 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,5 +23,32 @@
   text-align: center;
   color: #FFFFFF;
   width: 320px;
-  height:36px;
+  height: 36px;
+  border-radius: 9px;
+  padding: 0;
+}
+
+@media screen and (max-width:768px) {
+  .moviesCardList {
+    padding: 70px 30px 80px;
+  }
+
+  .moviesCardList__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px 30px;
+  }
+}
+
+@media screen and (max-width:590px) {
+  .moviesCardList {
+    padding: 40px 10px 80px;
+  }
+
+  .moviesCardList__grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px 0px;
+  }
+  .moviesCardList__button{
+    width: 240px;
+  }
 }

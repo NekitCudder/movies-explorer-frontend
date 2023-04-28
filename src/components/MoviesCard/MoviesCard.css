@@ -8,6 +8,7 @@
   display: flex;
   justify-content: space-between;
   padding: 14px;
+
 }
 
 .moviesCard__description {
@@ -39,11 +40,15 @@
   height: 30px;
   background-color: #313131;
   border-radius: 36px;
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .moviesCard__save {
   width: 10px;
 }
 
-.moviesCard__image {}
+.moviesCard__image {
+  width: 100%;
+}

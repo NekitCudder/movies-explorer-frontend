@@ -2,12 +2,7 @@
   display: flex;
   flex-direction: column;
   margin: 134px 0 0;
-
 }
-
-.button__signin {}
-
-.button__signup {}
 
 .buttonSign__button {
   background-color: #4285F4;
@@ -38,4 +33,26 @@
   color: #4285F4;
   text-decoration: unset;
   margin: 0 0 0 6px;
+}
+
+@media screen and (max-width:460px) {
+  .buttonSign {
+    margin: 222px 0 0;
+  }
+
+  .buttonSign__button {
+    margin: 0 0 14px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .buttonSign__description {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .buttonSign__link {
+    font-size: 12px;
+    line-height: 15px;
+  }
 }

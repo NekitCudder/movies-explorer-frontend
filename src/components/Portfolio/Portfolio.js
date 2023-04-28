@@ -1,11 +1,10 @@
 import "./Portfolio.css";
-import Title from "../Title/Title";
 import arrow from "../../images/arrow.svg";
 
 function Portfolio() {
   return (
     <section className="portfolio">
-      <Title title="Портфолио" />
+      <h2 className="portfolio__title">Портфолио</h2>
       <ul className="portfolio__links">
         <li>
           <a
