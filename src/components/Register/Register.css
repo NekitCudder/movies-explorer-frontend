@@ -11,6 +11,12 @@
   width: 38px;
   align-self: flex-start;
   margin: 0 0 40px;
+  cursor: pointer;
+}
+
+.register__logo:hover {
+  opacity: 0.6;
+  transition: opacity 0.3s linear;
 }
 
 .register__title {
@@ -37,7 +43,8 @@
   .register__logo {
     align-self: center
   }
-  .register{
+
+  .register {
     margin: 0;
     padding: 56px 30px 30px;
   }

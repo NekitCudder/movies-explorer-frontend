@@ -22,10 +22,10 @@ function Header({ loggedIn }) {
           </div>
         </div>
         <div className="header__nav_acc">
-          <Link to="/profile" className="header__linkAccount">Аккаунт</Link>
-          <div className="header__account">
+          <p className="header__linkAccount">Аккаунт</p>
+          <Link to="/profile" className="header__account">
             <img className="header__accountLogo" src={account} alt='Аккаунт' />
-          </div>
+          </Link>
         </div>
         <PopupMenu />
       </>

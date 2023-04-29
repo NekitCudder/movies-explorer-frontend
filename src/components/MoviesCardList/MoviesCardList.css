@@ -26,6 +26,12 @@
   height: 36px;
   border-radius: 9px;
   padding: 0;
+  cursor: pointer;
+}
+
+.moviesCardList__button:hover {
+  opacity: 0.6;
+  transition: opacity 0.3s linear;
 }
 
 @media screen and (max-width:768px) {
@@ -48,7 +54,8 @@
     grid-template-columns: repeat(1, 1fr);
     gap: 16px 0px;
   }
-  .moviesCardList__button{
+
+  .moviesCardList__button {
     width: 240px;
   }
 }

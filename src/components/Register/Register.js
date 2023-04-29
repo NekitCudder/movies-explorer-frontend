@@ -1,4 +1,5 @@
 import './Register.css';
+import { Link } from 'react-router-dom';
 import FormSign from '../UI/FormSign/FormSign';
 import ButtonSign from '../UI/ButtonSign/ButtonSign';
 import InputSign from '../UI/InputSign/InputSign';
@@ -7,7 +8,9 @@ import logo from "../../images/logo.svg";
 function Register() {
   return (
     <section className='register'>
-      <img className="register__logo" src={logo} alt="Логотип" />
+      <Link to="/">
+        <img className="register__logo" src={logo} alt='Логотип' />
+      </Link>
       <h2 className="register__title">Добро пожаловать!</h2>
       <FormSign>
         <InputSign

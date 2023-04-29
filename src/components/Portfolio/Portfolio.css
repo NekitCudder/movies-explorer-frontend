@@ -28,6 +28,12 @@
   border-bottom: solid 1px #424242;
   margin: 0 0 20px;
   padding: 0 0 20px;
+  cursor: pointer;
+}
+
+.portfolio__link:hover {
+  opacity: 0.6;
+  transition: opacity 0.3s linear;
 }
 
 .portfolio__link-icon {

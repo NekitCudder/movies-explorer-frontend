@@ -26,15 +26,15 @@ function PopupMenu({ loggedIn }) {
           <img className="popupMenu__closeButtonImage" src={closeLogo} alt="крестик" />
         </button>
         <div className="popupMenu__nav">
-          <Link exact to="/" className="popupMenu__link" activeClass="popupMenu__link_active">Главная</Link>
-          <Link exact to="/movies" className="popupMenu__link" activeClass="popupMenu__link_active">Фильмы</Link>
-          <Link exact to="/saved-movies" className="popupMenu__link" activeClass="popupMenu__link_active">Сохраненные фильмы</Link>
+          <Link exact to="/" className="popupMenu__link">Главная</Link>
+          <Link exact to="/movies" className="popupMenu__link">Фильмы</Link>
+          <Link exact to="/saved-movies" className="popupMenu__link">Сохраненные фильмы</Link>
         </div>
         <div className="popupMenu__acc">
-          <Link to="/profile" className="popupMenu__accLink">Аккаунт</Link>
-          <div className="popupMenu__accBox">
+          <p className="popupMenu__accLink">Аккаунт</p>
+          <Link to="/profile" className="popupMenu__accBox">
             <img className="popupMenu__accLogo" src={account} alt='Аккаунт' />
-          </div>
+          </Link>
         </div>
       </div>
     </section>
