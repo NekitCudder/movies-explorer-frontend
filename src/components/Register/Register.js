@@ -8,7 +8,7 @@ import logo from "../../images/logo.svg";
 function Register() {
   return (
     <section className='register'>
-      <Link to="/">
+      <Link to="/" className="register__link">
         <img className="register__logo" src={logo} alt='Логотип' />
       </Link>
       <h2 className="register__title">Добро пожаловать!</h2>

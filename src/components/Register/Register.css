@@ -36,7 +36,6 @@
 @media screen and (max-width:460px) {
   .register__title {
     display: flex;
-    align-items: center;
     justify-content: center;
   }
 
@@ -47,5 +46,11 @@
   .register {
     margin: 0;
     padding: 56px 30px 30px;
+    width: unset;
+  }
+
+  .register__link {
+    display: flex;
+    justify-content: center;
   }
 }

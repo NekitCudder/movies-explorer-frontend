@@ -16,12 +16,12 @@ function Header({ loggedIn }) {
           <Link to="/" className="header__link">
             <img className="header__logo" src={logo} alt='Логотип' />
           </Link>
-          <div className="header__nav_movies">
+          <div className="header__navMovies">
             <Link to="/movies" className="header__linkMovie">Фильмы</Link>
             <Link to="/saved-movies" className="header__linkMovie">Сохраненные фильмы</Link>
           </div>
         </div>
-        <div className="header__nav_acc">
+        <div className="header__navAccount">
           <p className="header__linkAccount">Аккаунт</p>
           <Link to="/profile" className="header__account">
             <img className="header__accountLogo" src={account} alt='Аккаунт' />
@@ -33,7 +33,7 @@ function Header({ loggedIn }) {
           <Link to="/" className="header__link">
             <img className="header__logo" src={logo} alt='Логотип' />
           </Link>
-          <div className="header__nav_sign">
+          <div className="header__navSign">
             <Link to='signup' className='header__signup'>Регистрация</Link>
             <Link to='signin' className='header__signin'>Войти</Link>
           </div>

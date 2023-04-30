@@ -13,6 +13,7 @@ function SearchForm() {
           </div>
           <button className="searchForm__button">Найти</button>
         </div>
+        <div className="searchForm__border"></div>
         <div className="searchForm__checkbox">
           <FilterCheckBox />
           <label className="searchForm__label" for="switch">Короткометражки</label>

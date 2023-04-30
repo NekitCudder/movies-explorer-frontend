@@ -26,7 +26,7 @@
   width: 100%;
 }
 
-.header__nav_sign {
+.header__navSign {
   display: flex;
   gap: 20px;
   align-items: center;
@@ -65,7 +65,7 @@
   transition: opacity 0.3s linear;
 }
 
-.header__nav_movies {
+.header__navMovies {
   display: flex;
   gap: 16px;
 }
@@ -84,7 +84,7 @@
   transition: opacity 0.3s linear;
 }
 
-.header__nav_acc {
+.header__navAccount {
   display: flex;
   gap: 13px;
   align-items: center;
@@ -126,11 +126,11 @@
     padding: 0 30px;
   }
 
-  .header__nav_movies {
+  .header__navMovies {
     display: none;
   }
 
-  .header__nav_acc {
+  .header__navAccount {
     display: none;
   }
 }
@@ -140,7 +140,7 @@
     padding: 0 14px;
   }
 
-  .header__nav_sign {
+  .header__navSign {
     gap: 14px
   }
 
