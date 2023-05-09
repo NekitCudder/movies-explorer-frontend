@@ -1,0 +1,39 @@
+.inputSign__fieldset {
+  border: unset;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.inputSign__label {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #8B8B8B;
+  margin: 0 0 5px;
+}
+
+.inputSign__text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  background-color: unset;
+  color: #FFFFFF;
+  border: unset;
+  border-bottom: 1px solid #424242;
+  padding: 0 0 10px;
+  margin: 0 0 24px;
+}
+
+.inputSign__error {
+  opacity: 0;
+}
+
+.inputSign__error-active {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #EE3465; 
+  opacity: 1;
+}

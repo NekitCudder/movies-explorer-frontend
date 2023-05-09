@@ -1,0 +1,149 @@
+.searchForm {
+  padding: 70px 70px 10px;
+}
+
+.searchForm__form {
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  margin: 0 0 69px;
+  background-color: #2F2F2F;
+}
+
+.searchForm__box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  max-width: 913px;
+  width: 100%;
+  padding: 19px 30px;
+  background-color: #2F2F2F;
+  border-top-left-radius: 9px;
+  border-bottom-left-radius: 9px;
+
+}
+
+.searchForm__inputBox {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.searchForm__icon {}
+
+.searchForm__input {
+  background-color: #2F2F2F;
+  border: unset;
+  padding: 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.searchForm__button {
+  background-color: #4285F4;
+  border-radius: 48px;
+  width: 58px;
+  height: 34px;
+  padding: 0;
+  margin: 0;
+  border: unset;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 18px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.searchForm__button:hover {
+  opacity: 0.6;
+  transition: opacity 0.3s linear;
+}
+
+.searchForm__border {
+  height: 40px;
+  width: 1px;
+  background-color: #424242;
+}
+
+.searchForm__checkbox {
+  display: flex;
+  align-items: center;
+  max-width: 226px;
+  padding: 19px 30px;
+  background-color: #2F2F2F;
+  border-top-right-radius: 9px;
+  border-bottom-right-radius: 9px;
+}
+
+.searchForm__line {
+  margin: 0;
+  border-bottom: 1px solid #424242;
+}
+
+.searchForm__label {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+@media screen and (max-width:768px) {
+  .searchForm {
+    padding: 80px 30px 10px;
+  }
+
+  .searchForm__form {
+    margin: 0 0 109px;
+  }
+
+  .searchForm__box {
+    padding: 19px;
+  }
+
+  .searchForm__checkbox {
+    padding: 19px;
+  }
+}
+
+@media screen and (max-width:640px) {
+  
+}
+
+@media screen and (max-width:640px) {
+  .searchForm {
+    padding: 80px 10px 10px;
+  }
+
+  .searchForm__form {
+    flex-direction: column;
+    margin: 0 0 20px;
+    background-color: unset;
+  }
+
+  .searchForm__border {
+    display: none;
+  }
+
+  .searchForm__icon {
+    display: none;
+  }
+
+  .searchForm__box {
+    border-right: none;
+    border-radius: 9px;
+  }
+
+  .searchForm__input {
+    font-size: 14px;
+  }
+
+  .searchForm__label {
+    font-size: 11px;
+  }
+
+  .searchForm__checkbox {
+    margin: 20px 0 0;
+    background: none;
+  }
+}

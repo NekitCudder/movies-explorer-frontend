@@ -1,0 +1,156 @@
+.header {
+  height: 74px;
+  padding: 0 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__link {
+  margin: 0 44px 0 0;
+  cursor: pointer;
+}
+
+.header__logo {
+  max-width: 38px;
+}
+
+.header__link:hover {
+  opacity: 0.6;
+  transition: opacity 0.3s linear;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.header__navSign {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.header__signin {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #000000;
+  padding: 8px 0;
+  text-decoration: none;
+  background-color: #3DDC84;
+  border-radius: 3px;
+  text-align: center;
+  width: 76px;
+  cursor: pointer;
+}
+
+.header__signin:hover {
+  opacity: 0.6;
+  transition: opacity 0.3s linear;
+}
+
+.header__signup {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #FFFFFF;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.header__signup:hover {
+  opacity: 0.6;
+  transition: opacity 0.3s linear;
+}
+
+.header__navMovies {
+  display: flex;
+  gap: 16px;
+}
+
+.header__linkMovie {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+  text-decoration: unset;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.header__linkMovie:hover {
+  opacity: 0.6;
+  transition: opacity 0.3s linear;
+}
+
+.header__navAccount {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+}
+
+.header__linkAccount {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  text-decoration: unset;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.header__account {
+  background-color: #313131;
+  border-radius: 6px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.header__account:hover {
+  opacity: 0.6;
+  transition: opacity 0.3s linear;
+}
+
+.header__accountLogo {
+  width: 10px;
+  height: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    height: 74px;
+    padding: 0 30px;
+  }
+
+  .header__navMovies {
+    display: none;
+  }
+
+  .header__navAccount {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .header {
+    padding: 0 14px;
+  }
+
+  .header__navSign {
+    gap: 14px
+  }
+
+  .header__signup {
+    font-size: 10px;
+  }
+
+  .header__signin {
+    width: 54px;
+    font-size: 10px;
+    padding: 5px 0;
+  }
+}

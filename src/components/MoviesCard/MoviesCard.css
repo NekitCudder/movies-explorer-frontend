@@ -1,0 +1,55 @@
+.moviesCard {
+  display: flex;
+  flex-direction: column;
+  background-color: #222222;
+}
+
+.moviesCard__info {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px;
+
+}
+
+.moviesCard__description {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.moviesCard__name {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  margin: 0;
+}
+
+.moviesCard__time {
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  color: #8B8B8B;
+  margin: 0;
+}
+
+.moviesCard__button {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  width: 30px;
+  height: 30px;
+  background-color: #313131;
+  border-radius: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.moviesCard__save {
+  width: 10px;
+}
+
+.moviesCard__image {
+  width: 100%;
+}
