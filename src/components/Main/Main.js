@@ -8,10 +8,10 @@ import Portfolio from "../Portfolio/Portfolio";
 
 
 
-function Main() {
+function Main({ loggedIn }) {
   return (
     <>
-      <Header loggedIn={false} />
+      <Header loggedIn={loggedIn} />
       <main>
         <Promo />
         <AboutProject />

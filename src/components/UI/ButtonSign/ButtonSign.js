@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import "./ButtonSign.css";
 
-function ButtonSign({ buttonText, linkDescription, linkText, linkRoute }) {
+function ButtonSign({ buttonText, linkDescription, linkText, linkRoute, onCLick, isActive, errorMessage }) {
   const isSignIn = linkRoute === "/signin";
 
   return (
     <section className={`buttonSign button__${isSignIn ? "signin" : "signup"}`}>
-      <button className="buttonSign__button">{buttonText}</button>
+      {errorMessage !== '' && (<p className="buttonSign__error">{errorMessage}</p>)}
+      <button className="buttonSign__button" onClick={onCLick} disabled={isActive ? '' : true}>{buttonText}</button>
       <p className="buttonSign__description">
         {linkDescription}
         <Link className="buttonSign__link" to={`${linkRoute}`}>{linkText}</Link>
