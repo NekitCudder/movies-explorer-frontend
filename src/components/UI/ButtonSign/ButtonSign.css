@@ -18,6 +18,11 @@
   cursor: pointer;
 }
 
+.buttonSign__button:disabled {
+  background-color: #335996;
+  color: #CCCCCC;
+}
+
 .buttonSign__error {
   font-weight: 400;
   font-size: 14px;

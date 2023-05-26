@@ -1,12 +1,10 @@
 import "../Movies/Movies.css"
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
 import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import { useState, useEffect } from "react";
 import { movieShortDuration } from '../../utils/constans';
 
-function SavedMovies({ loggedIn, savedMovies, onDeleteClick, isLoader }) {
+function SavedMovies({savedMovies, onDeleteClick, isLoader }) {
   const [filteredMoviesList, setFilteredMoviesList] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [isChecked, setIsChecked] = useState(false);
@@ -52,33 +50,29 @@ function SavedMovies({ loggedIn, savedMovies, onDeleteClick, isLoader }) {
 
   return (
     <>
-      <Header loggedIn={loggedIn} />
-      <main>
-        <SearchForm
-          onClickSearch={handleFilterMovies}
-          onCheckbox={handleCheckbox}
-          isChecked={isChecked}
+      <SearchForm
+        onClickSearch={handleFilterMovies}
+        onCheckbox={handleCheckbox}
+        isChecked={isChecked}
+      />
+      {isLoader ? (
+        <div className="moviesPreloader">
+        </div>
+      ) : isMovieList ? (
+        <div className='moviesPreloader'>
+          <p className='moviesPreloader__title'>Ваш список пуст</p>
+        </div>
+      ) : isNotFoundFilms ? (
+        <div className='moviesPreloader'>
+          <p className='moviesPreloader__title'>Ничего не найдено</p>
+        </div>
+      ) : (
+        <MoviesCardList
+          filteredMovies={filteredMoviesList}
+          onDeleteClick={onDeleteClick}
+          isSaveMovies={true}
         />
-        {isLoader ? (
-          <div className="moviesPreloader">
-          </div>
-        ) : isMovieList ? (
-          <div className='moviesPreloader'>
-            <p className='moviesPreloader__title'>Ваш список пуст</p>
-          </div>
-        ) : isNotFoundFilms ? (
-          <div className='moviesPreloader'>
-            <p className='moviesPreloader__title'>Ничего не найдено</p>
-          </div>
-        ) : (
-          <MoviesCardList
-            filteredMovies={filteredMoviesList}
-            onDeleteClick={onDeleteClick}
-            isSaveMovies={true}
-          />
-        )}
-      </main>
-      <Footer />
+      )}
     </>
   );
 }

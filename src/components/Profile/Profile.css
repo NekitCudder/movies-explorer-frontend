@@ -60,6 +60,10 @@
   cursor: pointer;
 }
 
+.profile__edit:disabled {
+  color: #575757;
+}
+
 .profile__edit:hover {
   opacity: 0.6;
   transition: opacity 0.3s linear;

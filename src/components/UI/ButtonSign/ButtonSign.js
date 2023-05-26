@@ -7,7 +7,7 @@ function ButtonSign({ buttonText, linkDescription, linkText, linkRoute, onCLick,
   return (
     <section className={`buttonSign button__${isSignIn ? "signin" : "signup"}`}>
       {errorMessage !== '' && (<p className="buttonSign__error">{errorMessage}</p>)}
-      <button className="buttonSign__button" onClick={onCLick} disabled={isActive ? '' : true}>{buttonText}</button>
+      <button className="buttonSign__button" type="submit" onClick={onCLick} disabled={isActive ? '' : true}>{buttonText}</button>
       <p className="buttonSign__description">
         {linkDescription}
         <Link className="buttonSign__link" to={`${linkRoute}`}>{linkText}</Link>

@@ -12,6 +12,8 @@ import { useEffect, useState } from 'react';
 import { errorMessage } from '../../utils/constans';
 import { CurrentUserContext } from '../../context/CurrentUserContext';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 function App() {
   const navigate = useNavigate();
@@ -29,14 +31,14 @@ function App() {
     if (isLogin) {
       setIsLoading(true);
       Promise.all([
-        moviesApi.getCards(),
+        //moviesApi.getCards(),
         mainApi.getSavedMovies(),
         mainApi.getUserInfo(),
       ])
         .then((data) => {
-          setMovies(data[0]);
-          setSavedMovies(data[1]);
-          setCurrentUser(data[2]);
+          //setMovies(data[0]);
+          setSavedMovies(data[0]);
+          setCurrentUser(data[1]);
         })
         .catch(() =>
           console.log('ошибка загрузки данных'))
@@ -45,6 +47,13 @@ function App() {
         });
     }
   }, [isLogin]);
+
+  function getInitialMovies() {
+    moviesApi.getCards()
+      .then((data) => {
+        setMovies(data);
+      })
+  }
 
   function handleLogin(data, button, message) {
     mainApi.login(data)
@@ -55,7 +64,7 @@ function App() {
       })
       .catch(() => {
         button(false);
-        message(errorMessage.errorWrongInput)
+        message(errorMessage.errorLogin)
       })
   }
 
@@ -66,7 +75,7 @@ function App() {
       })
       .catch(() => {
         button(false);
-        message(errorMessage.errorRigister);
+        message(errorMessage.errorRegister);
       })
   }
 
@@ -130,65 +139,70 @@ function App() {
 
   return (
     <CurrentUserContext.Provider value={currentUser} >
-      <Routes>
-        <Route exact path="/" element={<Main />} />
-        <Route
-          path="/movies"
-          element={
-            <ProtectedRoute isLogin={isLogin}>
-              <Movies
-                movies={movies}
-                onLikeClick={handleSavedMovie}
-                onDeleteClick={handleDeleteMovie}
-                isLoader={isLoading}
-                savedMovies={savedMovies}
-              />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/saved-movies"
-          element={
-            <ProtectedRoute isLogin={isLogin}>
-              <SavedMovies
-                savedMovies={savedMovies}
-                onDeleteClick={handleDeleteLikedMovie}
-                isLoader={isLoading}
-              />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/profile"
-          element={
-            <ProtectedRoute isLogin={isLogin}>
-              <Profile
-                onChange={handleEditUser}
-                onSignOut={handleLogOut}
-              />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/signup"
-          element={
-            <ProtectedRoute isLogin={!isLogin}>
-              <Register
-                onSubmit={handleRegister}
-              />
-            </ProtectedRoute>}
-        />
-        <Route
-          path="/signin"
-          element={
-            <ProtectedRoute isLogin={!isLogin}>
-              <Login
-                onSubmit={handleLogin}
-              />
-            </ProtectedRoute>}
-        />
-        <Route path="*" element={<ErrorRoute />} />
-      </Routes>
+      <Header isLogin={isLogin} />
+      <main>
+        <Routes>
+          <Route exact path="/" element={<Main />} />
+          <Route
+            path="/movies"
+            element={
+              <ProtectedRoute isLogin={isLogin}>
+                <Movies
+                  firstSearch={getInitialMovies}
+                  movies={movies}
+                  onLikeClick={handleSavedMovie}
+                  onDeleteClick={handleDeleteMovie}
+                  isLoader={isLoading}
+                  savedMovies={savedMovies}
+                />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/saved-movies"
+            element={
+              <ProtectedRoute isLogin={isLogin}>
+                <SavedMovies
+                  savedMovies={savedMovies}
+                  onDeleteClick={handleDeleteLikedMovie}
+                  isLoader={isLoading}
+                />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute isLogin={isLogin}>
+                <Profile
+                  onChange={handleEditUser}
+                  onSignOut={handleLogOut}
+                />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/signup"
+            element={
+              <ProtectedRoute isLogin={!isLogin}>
+                <Register
+                  onSubmit={handleRegister}
+                />
+              </ProtectedRoute>}
+          />
+          <Route
+            path="/signin"
+            element={
+              <ProtectedRoute isLogin={!isLogin}>
+                <Login
+                  onSubmit={handleLogin}
+                />
+              </ProtectedRoute>}
+          />
+          <Route path="*" element={<ErrorRoute />} />
+        </Routes>
+      </main>
+      <Footer />
     </CurrentUserContext.Provider>
   );
 }

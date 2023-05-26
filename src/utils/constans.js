@@ -1,10 +1,10 @@
-export const namePattern = "[a-zA-Zа-яА-Я0-9-]{2,30}";
+export const namePattern = "[a-zA-Zа-яА-Я0-9 -]{2,30}";
 export const emailPattern = "[a-z0-9]{2,30}@[a-z]{2,8}\\.[a-z]{2,4}";
 
 export const errorMessage = {
-  errorWrongInput: "Неверный логин или пароль",
+  errorLogin: "Неверный логин или пароль",
   errorConflictEmail: "Пользователь с данным email уже существует",
-  errorRigister: "При регистрации произошла ошибка",
+  errorRegister: "При регистрации произошла ошибка",
   errorUpdateUser: "При обновлении данных произошла ошибка",
   successUpdateUser: "Данные изменены"
 }

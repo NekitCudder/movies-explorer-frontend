@@ -1,12 +1,10 @@
 import "./Movies.css"
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
 import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import { useState, useEffect } from "react";
 import { movieShortDuration } from '../../utils/constans';
 
-function Movies({ loggedIn, movies, onLikeClick, onDeleteClick, isLoader, savedMovies }) {
+function Movies({ firstSearch, movies, onLikeClick, onDeleteClick, isLoader, savedMovies }) {
 
   const localInputValue = localStorage.getItem('inputValue');
   const checkboxValue = localStorage.getItem('checkboxValue');
@@ -23,6 +21,8 @@ function Movies({ loggedIn, movies, onLikeClick, onDeleteClick, isLoader, savedM
         : false
       : false
   );
+  const [searchMessage, setSearchMessage] = useState('');
+
 
   function handleFilterMovies(inputValue) {
     setInputValue(inputValue);
@@ -48,9 +48,15 @@ function Movies({ loggedIn, movies, onLikeClick, onDeleteClick, isLoader, savedM
     }
   }, [filteredMoviesList, inputValue]);
 
+  useEffect(() => {
+    if (isFirstLog && inputValue !== '') {
+      firstSearch();
+    }
+  }, [inputValue, isFirstLog]);
 
   useEffect(() => {
     if (inputValue !== '') {
+      setSearchMessage('');
       let items = movies.filter((film) => {
         if (isChecked) {
           return film.nameRU.toLowerCase().includes(inputValue.toLowerCase());
@@ -64,40 +70,40 @@ function Movies({ loggedIn, movies, onLikeClick, onDeleteClick, isLoader, savedM
       });
       setFilteredMoviesList(items);
     }
+    else {
+      setSearchMessage('Необходимо ввести ключевое слово');
+    }
   }, [inputValue, isChecked, movies])
 
   return (
     <>
-      <Header loggedIn={loggedIn} />
-      <main>
-        <SearchForm
-          onClickSearch={handleFilterMovies}
-          onCheckbox={handleCheckbox}
-          isValue={inputValue}
-          isChecked={isChecked}
+      <SearchForm
+        onClickSearch={handleFilterMovies}
+        onCheckbox={handleCheckbox}
+        isValue={inputValue}
+        isChecked={isChecked}
+        searchMessage={searchMessage}
+      />
+      {isLoader ? (
+        <div className="moviesPreloader">
+        </div>
+      ) : isFirstLog ? (
+        <div className='moviesPreloader'>
+          <h2 className='moviesPreloader__title'>Начните поиск</h2>
+        </div>
+      ) : isNotFoundFilms ? (
+        <div className='moviesPreloader'>
+          <h2 className='moviesPreloader__title'>Ничего не найдено</h2>
+        </div>
+      ) : (
+        <MoviesCardList
+          filteredMovies={filteredMoviesList}
+          onLikeClick={onLikeClick}
+          onDeleteClick={onDeleteClick}
+          savedMovies={savedMovies}
+          isSaveMovies={false}
         />
-        {isLoader ? (
-          <div className="moviesPreloader">
-          </div>
-        ) : isFirstLog ? (
-          <div className='moviesPreloader'>
-            <h2 className='moviesPreloader__title'>Начните поиск</h2>
-          </div>
-        ) : isNotFoundFilms ? (
-          <div className='moviesPreloader'>
-            <h2 className='moviesPreloader__title'>Ничего не найдено</h2>
-          </div>
-        ) : (
-          <MoviesCardList
-            filteredMovies={filteredMoviesList}
-            onLikeClick={onLikeClick}
-            onDeleteClick={onDeleteClick}
-            savedMovies={savedMovies}
-            isSaveMovies={false}
-          />
-        )}
-      </main>
-      <Footer />
+      )}
     </>
   );
 }

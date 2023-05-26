@@ -3,7 +3,7 @@ import searchIcon from "../../images/search.svg";
 import FilterCheckBox from "../FilterCheckBox/FilterCheckBox";
 import { useState } from "react";
 
-function SearchForm({onClickSearch, onCheckbox, isValue, isChecked}) {
+function SearchForm({ onClickSearch, onCheckbox, isValue, isChecked, searchMessage }) {
 
   const [isFilmFilter, setIsFilmFilter] = useState(isValue ? isValue : '');
 
@@ -14,7 +14,6 @@ function SearchForm({onClickSearch, onCheckbox, isValue, isChecked}) {
 
   function handleButtonFilter(e) {
     e.preventDefault();
-    console.log(isFilmFilter);
     onClickSearch(isFilmFilter);
   }
 
@@ -37,6 +36,7 @@ function SearchForm({onClickSearch, onCheckbox, isValue, isChecked}) {
           <label className="searchForm__label" onClick={onCheckbox} for="switch">Короткометражки</label>
         </div>
       </form>
+      <span className="searchForm__error">{searchMessage}</span>
       <div className="searchForm__line"></div>
     </section>
   );

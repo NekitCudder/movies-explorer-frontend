@@ -8,18 +8,14 @@ import Portfolio from "../Portfolio/Portfolio";
 
 
 
-function Main({ loggedIn }) {
+function Main() {
   return (
     <>
-      <Header loggedIn={loggedIn} />
-      <main>
         <Promo />
         <AboutProject />
         <Techs />
         <AboutMe />
         <Portfolio />
-      </main>
-      <Footer />
     </>
   );
 }

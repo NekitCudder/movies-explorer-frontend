@@ -17,7 +17,6 @@ function MoviesCardList({ filteredMovies, onLikeClick, onDeleteClick, savedMovie
   useEffect(() => {
     function renderMovies() {
       const movieList = filteredMovies.map((movie, index) => {
-        console.log(savedMovies)
         const isLiked = savedMovies.some((savedMovie) => {
           return movie.id === savedMovie.movieId;
         });
@@ -39,7 +38,6 @@ function MoviesCardList({ filteredMovies, onLikeClick, onDeleteClick, savedMovie
 
     function renderSaveMovies() {
       const movieList = filteredMovies.map((movie) => {
-        console.log(filteredMovies)
         return (
           <MoviesCard
             film={movie}
