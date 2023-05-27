@@ -19,13 +19,13 @@ function SearchForm({ onClickSearch, onCheckbox, isValue, isChecked, searchMessa
 
   return (
     <section className="searchForm">
-      <form className="searchForm__form">
+      <form className="searchForm__form" onClick={handleButtonFilter}>
         <div className="searchForm__box">
           <div className="searchForm__inputBox">
             <img className="searchForm__icon" src={searchIcon} alt="Поиск" />
             <input className="searchForm__input" value={isFilmFilter} onChange={handleInputFilter} placeholder="Фильм" required></input>
           </div>
-          <button type='button' className="searchForm__button" onClick={handleButtonFilter}>Найти</button>
+          <button type='submit' className="searchForm__button" >Найти</button>
         </div>
         <div className="searchForm__border"></div>
         <div className="searchForm__checkbox">
