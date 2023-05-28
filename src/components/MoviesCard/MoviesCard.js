@@ -2,7 +2,7 @@ import "./MoviesCard.css";
 import liked from "../../images/liked.svg";
 import remove from "../../images/delete.svg";
 import unlike from "../../images/unlike.svg";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function MoviesCard({ film, onLikeClick, onDeleteClick, isLiked }) {
 
@@ -46,7 +46,9 @@ function MoviesCard({ film, onLikeClick, onDeleteClick, isLiked }) {
           )
         }
       </div>
-      <img className="moviesCard__image" src={isMoviesPath ? `https://api.nomoreparties.co${film.image.url}` : film.image} alt="Кадр из фильма" />
+      <Link className="moviesCard__link" to={film.trailerLink} target="_blank">
+        <img className="moviesCard__image" src={isMoviesPath ? `https://api.nomoreparties.co${film.image.url}` : film.image} alt="Кадр из фильма" />
+      </Link>
     </section>
   );
 }
