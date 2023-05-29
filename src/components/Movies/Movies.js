@@ -59,12 +59,12 @@ function Movies({ firstSearch, movies, onLikeClick, onDeleteClick, isLoader, sav
       setSearchMessage('');
       let items = movies.filter((film) => {
         if (isChecked) {
-          return film.nameRU.toLowerCase().includes(inputValue.toLowerCase());
+          return (film.nameRU.toLowerCase().includes(inputValue.toLowerCase()) &&
+            film.duration < movieShortDuration);
         }
         else {
           return (
-            film.nameRU.toLowerCase().includes(inputValue.toLowerCase()) &&
-            film.duration > movieShortDuration
+            film.nameRU.toLowerCase().includes(inputValue.toLowerCase())
           );
         }
       });

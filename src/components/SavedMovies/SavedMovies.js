@@ -4,7 +4,7 @@ import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import { useState, useEffect } from "react";
 import { movieShortDuration } from '../../utils/constans';
 
-function SavedMovies({savedMovies, onDeleteClick, isLoader }) {
+function SavedMovies({ savedMovies, onDeleteClick, isLoader }) {
   const [filteredMoviesList, setFilteredMoviesList] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [isChecked, setIsChecked] = useState(false);
@@ -36,12 +36,12 @@ function SavedMovies({savedMovies, onDeleteClick, isLoader }) {
   useEffect(() => {
     let items = savedMovies.filter((film) => {
       if (isChecked) {
-        return film.nameRU.toLowerCase().includes(inputValue.toLowerCase());
+        return (film.nameRU.toLowerCase().includes(inputValue.toLowerCase()) &&
+          film.duration < movieShortDuration);
       }
       else {
         return (
-          film.nameRU.toLowerCase().includes(inputValue.toLowerCase()) &&
-          film.duration > movieShortDuration
+          film.nameRU.toLowerCase().includes(inputValue.toLowerCase())
         );
       }
     });
