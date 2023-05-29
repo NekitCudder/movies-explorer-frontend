@@ -1,6 +1,6 @@
 .moviesCardList {
-  padding: 70px 70px 80px;
   display: flex;
+  padding: 70px 70px 80px;
   flex-direction: column;
   align-items: center;
 }
@@ -27,6 +27,7 @@
   border-radius: 9px;
   padding: 0;
   cursor: pointer;
+  justify-self: center;
 }
 
 .moviesCardList__button:hover {

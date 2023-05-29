@@ -1,0 +1,13 @@
+.moviesPreloader {
+  display: flex;
+  justify-content: center;
+}
+
+.moviesPreloader__title {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 29px;
+  text-align: center;
+  margin: 0;
+  padding: 70px 0 0;
+}

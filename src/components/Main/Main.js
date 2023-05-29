@@ -11,15 +11,11 @@ import Portfolio from "../Portfolio/Portfolio";
 function Main() {
   return (
     <>
-      <Header loggedIn={false} />
-      <main>
         <Promo />
         <AboutProject />
         <Techs />
         <AboutMe />
         <Portfolio />
-      </main>
-      <Footer />
     </>
   );
 }

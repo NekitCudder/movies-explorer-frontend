@@ -1,35 +1,54 @@
 import "./MoviesCard.css";
-import save from "../../images/save.svg";
+import liked from "../../images/liked.svg";
 import remove from "../../images/delete.svg";
-import movie from "../../images/movie.png";
-import { useLocation } from "react-router-dom";
+import unlike from "../../images/unlike.svg";
+import { Link, useLocation } from "react-router-dom";
 
-function MoviesCard() {
+function MoviesCard({ film, onLikeClick, onDeleteClick, isLiked }) {
 
   let path = useLocation();
   const isMoviesPath = path.pathname === "/movies";
+  const hour = (film.duration / 60).toFixed(0);
+  const min = film.duration % 60;
+
+  function handleLikeCLick(e) {
+    e.preventDefault();
+    if (isLiked) {
+      onDeleteClick(film);
+    }
+    else {
+      onLikeClick(film);
+    }
+  }
+
+  function handleDeleteCLick(e) {
+    e.preventDefault();
+    onDeleteClick(film);
+  }
 
   return (
     <section className="moviesCard">
       <div className="moviesCard__info">
         <div className="moviesCard__description">
-          <h3 className="moviesCard__name">Skate Kitchen</h3>
-          <p className="moviesCard__time">1ч 46м</p>
+          <h3 className="moviesCard__name">{film.nameRU}</h3>
+          <p className="moviesCard__time">{hour}ч {min < 10 ? '0' + min : min}м</p>
         </div>
         {isMoviesPath ?
           (
-            <button className="moviesCard__button">
-              <img className="moviesCard__save" src={save} alt='Сохранить' />
+            <button className="moviesCard__button" onClick={handleLikeCLick}>
+              <img className="moviesCard__save" src={isLiked ? liked : unlike} alt='Сохранить' />
             </button>
           ) :
           (
-            <button className="moviesCard__button">
+            <button className="moviesCard__button" onClick={handleDeleteCLick}>
               <img className="moviesCard__save" src={remove} alt='Удалить' />
             </button>
           )
         }
       </div>
-      <img className="moviesCard__image" src={movie} alt="Кадр из фильма" />
+      <Link className="moviesCard__link" to={film.trailerLink} target="_blank">
+        <img className="moviesCard__image" src={isMoviesPath ? `https://api.nomoreparties.co${film.image.url}` : film.image} alt="Кадр из фильма" />
+      </Link>
     </section>
   );
 }
